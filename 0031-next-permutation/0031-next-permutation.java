@@ -9,7 +9,14 @@ class Solution {
             }
         }
         if(pivot==-1){          //thats when no pivot exists
-            Arrays.sort(nums);
+            int i=0,j=n-1;
+            while(i<j){
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++;
+                j--;
+            }
             return;
         }
         for(int i=n-1;i>pivot;i--){     //swapping of pivot element with its continuous greater element
